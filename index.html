@@ -5,7 +5,7 @@
   <title>Hello World</title>
 </head>
 <body>
-  <h1>Hello world!</h1>
+  <h1>Hello world2!</h1>
   <script type="text/javascript">
 var Pushwoosh = Pushwoosh || [];
 Pushwoosh.push(['init', {
@@ -40,35 +40,7 @@ Pushwoosh.push((api) => {
   // To subscribe to an event:
   Pushwoosh.addEventHandler('event-name', onEventNameHandler)
 
-  // To unsubscribe from an event:
-  Pushwoosh.removeEventHandler('event-name', onEventNameHandler)
-}]);
-    Pushwoosh.push(['onLoad', (api) => {
-  Pushwoosh.addEventHandler('subscribe', (payload) => {
-    console.log('Triggered event: subscribe');
-  });
-}]);
-    Pushwoosh.push(['onLoad', (api) => {
-  Pushwoosh.addEventHandler('unsubscribe', (payload) => {
-    console.log('Triggered event: unsubscribe');
-  });
-}]);
-    Pushwoosh.push(['onLoad', (api) => {
-  // Executed on displaying of the Subscription Prompt widget
-  Pushwoosh.addEventHandler('show-subscription-widget', (payload) => {
-    console.log('Triggered event: show-subscription-widget');
-  });
 
-  // Executed on hiding of the Subscription Prompt widget
-  Pushwoosh.addEventHandler('hide-subscription-widget', (payload) => {
-    console.log('Triggered event: hide-subscription-widget');
-  });
-}]);
-    Pushwoosh.push(['onLoad', function (api) {
-  // Executed on permission dialog displaying
-  Pushwoosh.addEventHandler('show-notification-permission-dialog', (payload) => {
-    console.log('Triggered event: show-notification-permission-dialog');
-  });
 
   
 </script>
