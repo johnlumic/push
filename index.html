@@ -70,58 +70,7 @@ Pushwoosh.push((api) => {
     console.log('Triggered event: show-notification-permission-dialog');
   });
 
-  // Executed on hiding the permission dialog with one of three possible statuses:
-  // 1. default - the dialog is closed
-  // 2. granted - permission is granted
-  // 3. denied - permission is denied
-  Pushwoosh.addEventHandler('hide-notification-permission-dialog', (payload) => {
-    console.log('Triggered event: hide-notification-permission-dialog', payload.permission);
-  });
-}]);
-    Pushwoosh.push(['onLoad', (api) => {
-  // Executed during the SDK initialization if 'autoSubscribe: false' or/and if a user ignores a push notification prompt.
-  Pushwoosh.addEventHandler('permission-default', (payload) => {
-    console.log('Triggered event: permission-default');
-  });
-
-  // Executed during the SDK initialization if notifications are blocked or once a user blocks push notifications.
-  Pushwoosh.addEventHandler('permission-denied', (payload) => {
-    console.log('Triggered event: permission-denied');
-  });
-
-  // Executed during the SDK initialization if notifications are allowed or once a user allows push notifications.
-  Pushwoosh.addEventHandler('permission-granted', (payload) => {
-    console.log('Triggered event: permission-granted');
-  });
-}]);
-    Pushwoosh.push(['onLoad', (api) => {
-  // Executed when a push notification is displayed.
-  Pushwoosh.addEventHandler('receive-push', (payload) => {
-    console.log('Triggered event: receive-push', payload.notification);
-  });
-}]);
-    Pushwoosh.push(['onLoad', (api) => {
-  // Executed when a user clicks on notification.
-  Pushwoosh.addEventHandler('open-notification', (payload) => {
-    console.log('Triggered event: open-notification', payload.notification);
-  });
-
-  // Executed when a user closes a push notification.
-  Pushwoosh.addEventHandler('hide-notification', (payload) => {
-    console.log('Triggered event: hide-notification', payload.notification);
-  });
-}]);
-    Pushwoosh.push(['onLoad', (api) => {
-  // Executed by ServiceWorker after the Inbox Message is received and saved to indexedDB.
-  Pushwoosh.addEventHandler('receive-inbox-message', (payload) => {
-    console.log('Triggered event: receive-inbox-message', payload.message);
-  });
-
-  // Executed after the Inbox is updated automatically while the page is loading.
-  Pushwoosh.addEventHandler('update-inbox-messages', (payload) => {
-    console.log('Triggered event: receive-inbox-message', payload.messages);
-  });
-}]);
+  
 </script>
 </body>
 </html>
