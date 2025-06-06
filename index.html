@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>
+  <title>Pushwoosh Demo</title>
+  <script src="https://cdn.pushwoosh.com/webpush/v3/pushwoosh-web-notifications.js" async></script>
 </head>
 <body>
-  <h1>Hello world2!</h1>
+  <h1>Hello world!3</h1>
   <script type="text/javascript">
 var Pushwoosh = Pushwoosh || [];
 Pushwoosh.push(['init', {
     logLevel: 'info', // possible values: error, info, debug
     applicationCode: 'F37B9-FCF38', // you application code from Pushwoosh Control Panel
-    apiToken: 'XAnxN6m1G5F3SpQ76taO8vtfOJ0LCvK0OkF2TyX4zALoJgNSbB8Afniu740IokIYFlSDa03geeWdIg5BdRl0', //  Device API Token
-    defaultNotificationTitle: 'Pushwoosh', // sets a default title for push notifications
+    apiToken: 'zjMSsTn5m2rrZYE4bwUBdX0GnNOrdVv8FilsbQssFTWXXniMHtTUnKFj4R5d4htxpCvUZScV37W4SM6cVzp1', //  Device API Token
     serviceWorkerUrl: '/push/pushwoosh-service-worker.js',
+    defaultNotificationTitle: 'Pushwoosh', // sets a default title for push notifications
     defaultNotificationImage: 'https://yoursite.com/img/logo-medium.png', // URL to custom custom notification image
     autoSubscribe: true, // or true. If true, prompts a user to subscribe for pushes upon SDK initialization
     subscribeWidget: {
       enable: true
     },
-    userId: '1', // optional, set custom user ID
     tags: {
         'Name': 'John Smith'     // optional, set custom Tags
     }
@@ -38,11 +38,11 @@ Pushwoosh.push((api) => {
   }
 
   // To subscribe to an event:
-  Pushwoosh.addEventHandler('event-name', onEventNameHandler);
+  Pushwoosh.addEventHandler('event-name', onEventNameHandler)
 
-
-
-  
+  // To unsubscribe from an event:
+  Pushwoosh.removeEventHandler('event-name', onEventNameHandler)
+}]);
 </script>
 </body>
 </html>
